@@ -3,12 +3,46 @@
 <head>
   <meta charset="UTF-8">
   <title>Alias RNG</title>
-</head>
-<body>
+  <style>
+  body {
+    background: #0a0a0a;
+    color: #e6e6e6;
+    font-family: monospace;
+    text-align: center;
+    margin-top: 60px;
+  }
 
+  #rollBtn {
+    background: linear-gradient(135deg, #222, #000);
+    border: 2px solid #555;
+    color: #fff;
+    padding: 18px 40px;
+    font-size: 20px;
+    cursor: pointer;
+    letter-spacing: 2px;
+    transition: 0.2s;
+  }
+
+  #rollBtn:hover {
+    border-color: #aaa;
+    transform: scale(1.05);
+  }
+
+  #result {
+    margin-top: 30px;
+    font-size: 22px;
+  }
+
+  .rarity {
+    font-size: 14px;
+    opacity: 0.7;
+  }
+ </style>
+</head>
+  
 <h1>Alias RNG</h1>
 <p id="result">Clique pour roll</p>
-<button onclick="roll()">ROLL</button>
+<button id="rollBtn" onclick="roll()">ROLL</button>
 
 <script src="game.js"></script>
 </body>
