@@ -20,6 +20,16 @@ let player = {
   luck: 1
 };
 
+function getRarity(index) {
+  if (index < 10) return "Common";
+  if (index < 20) return "Uncommon";
+  if (index < 30) return "Rare";
+  if (index < 38) return "Epic";
+  if (index < 43) return "Legendary";
+  return "Divine";
+}
+
+
 function roll() {
   const weights = getAuraWeights();
 
