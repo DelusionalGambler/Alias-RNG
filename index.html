@@ -37,11 +37,37 @@
     font-size: 14px;
     opacity: 0.7;
   }
+    #result {
+  margin-top: 60px;
+}
+
+#rarityText {
+  font-size: 14px;
+  letter-spacing: 2px;
+  margin-bottom: 6px;
+}
+
+#auraText {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.common { color: #b0b0b0; }
+.uncommon { color: #7fbf7f; }
+.rare { color: #4fa3ff; }
+.epic { color: #b56cff; }
+.legendary { color: #ffb347; }
+.divine { color: #ff4d4d; text-shadow: 0 0 8px #ff4d4d; }
+
  </style>
 </head>
   
 <h1>Alias RNG</h1>
-<p id="result">Clique pour roll</p>
+<div id="result">
+  <div id="rarityText"></div>
+  <div id="auraText"></div>
+</div>
+
 <button id="rollBtn" onclick="roll()">ROLL</button>
 
 <script src="game.js"></script>
