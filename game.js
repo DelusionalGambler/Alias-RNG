@@ -42,6 +42,10 @@ function roll() {
   for (let i = 0; i < adjusted.length; i++) {
     if (r < adjusted[i]) {
     const rarity = getRarity(i);
+      if (rarity === "Uncommon") {
+  triggerUncommonFlash();
+}
+
 const rarityEl = document.getElementById("rarityText");
 const auraEl = document.getElementById("auraText");
 
@@ -62,4 +66,11 @@ auraEl.classList.add(rarityClass);
     }
     r -= adjusted[i];
   }
+}
+function triggerUncommonFlash() {
+  const body = document.body;
+
+  body.classList.remove("flash-uncommon");
+  void body.offsetWidth; // force le reset de l'animation
+  body.classList.add("flash-uncommon");
 }
