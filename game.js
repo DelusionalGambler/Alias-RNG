@@ -31,8 +31,23 @@ function roll() {
 
   for (let i = 0; i < adjusted.length; i++) {
     if (r < adjusted[i]) {
-      document.getElementById("result").textContent =
-        "Aura obtenue: " + auras[i];
+    const rarity = getRarity(i);
+const rarityEl = document.getElementById("rarityText");
+const auraEl = document.getElementById("auraText");
+
+// reset classes
+rarityEl.className = "";
+auraEl.className = "";
+
+rarityEl.textContent = rarity;
+auraEl.textContent = auras[i];
+
+// appliquer couleur
+const rarityClass = rarity.toLowerCase().replace("é", "e");
+
+rarityEl.classList.add(rarityClass);
+auraEl.classList.add(rarityClass);
+
       return;
     }
     r -= adjusted[i];
