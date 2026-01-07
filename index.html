@@ -59,7 +59,23 @@
 .legendary { color: #ffb347; }
 .divine { color: #ff4d4d; text-shadow: 0 0 8px #ff4d4d; }
 
- </style>
+ @keyframes uncommonFlash {
+  0% {
+    background-color: #0a0a0a;
+  }
+  20% {
+    background-color: #0f2a0f;
+  }
+  100% {
+    background-color: #0a0a0a;
+  }
+}
+
+.flash-uncommon {
+  animation: uncommonFlash 0.8s ease-out;
+}
+
+  </style>
 </head>
   
 <h1>Alias RNG</h1>
