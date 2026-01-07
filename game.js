@@ -45,6 +45,10 @@ function roll() {
       if (rarity === "Uncommon") {
   triggerUncommonFlash();
 }
+      if (rarity === "Rare") {
+  triggerRareShock();
+}
+
 
 const rarityEl = document.getElementById("rarityText");
 const auraEl = document.getElementById("auraText");
@@ -74,3 +78,16 @@ function triggerUncommonFlash() {
   void body.offsetWidth; // force le reset de l'animation
   body.classList.add("flash-uncommon");
 }
+
+function triggerRareShock() {
+  const shock = document.createElement("div");
+  shock.classList.add("shock-rare");
+
+  document.body.appendChild(shock);
+
+  // Supprime le div après l'animation pour ne pas polluer le DOM
+  setTimeout(() => {
+    shock.remove();
+  }, 1000); // durée = 1s, doit correspondre à l'animation CSS
+}
+
