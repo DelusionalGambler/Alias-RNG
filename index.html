@@ -104,6 +104,63 @@
   z-index: 1000;
 }
 
+  @keyframes epicLine {
+  0% {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+  30% {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scaleX(1.2);
+  }
+}
+
+.epic-line {
+  position: fixed;
+  height: 4px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    #b066ff,
+    transparent
+  );
+  pointer-events: none;
+  animation: epicLine 0.6s ease-out forwards;
+  z-index: 999;
+}
+
+/* Ondes EPIC */
+
+@keyframes epicShock {
+  0% {
+    transform: scale(0);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(25);
+    opacity: 0;
+  }
+}
+
+.epic-shock {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: rgba(176, 102, 255, 0.5);
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(0);
+  animation: epicShock 0.6s ease-out forwards;
+  z-index: 998;
+}
+
+
   </style>
 </head>
   
