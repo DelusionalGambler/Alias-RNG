@@ -51,6 +51,10 @@ function roll() {
       if (rarity === "Epic") {
   triggerEpicEffect();
 }
+      if (rarity === "Legendary") {
+  triggerLegendaryEffect(aura.name);
+}
+
 
 
 
@@ -131,4 +135,44 @@ function spawnEpicShocks() {
     }, i * 180);
   }
 }
+
+function triggerLegendaryEffect(auraName) {
+  const body = document.body;
+
+  body.classList.add("legendary-dark");
+
+  setTimeout(() => {
+    showLegendaryText(auraName);
+    body.classList.remove("legendary-dark");
+    body.classList.add("shake");
+    spawnLegendaryShocks();
+  }, 400);
+
+  setTimeout(() => {
+    body.classList.remove("shake");
+  }, 900);
+}
+
+function showLegendaryText(text) {
+  const el = document.createElement("div");
+  el.classList.add("legendary-text");
+  el.textContent = text;
+
+  document.body.appendChild(el);
+
+  setTimeout(() => el.remove(), 1600);
+}
+
+function spawnLegendaryShocks() {
+  for (let i = 0; i < 10; i++) {
+    setTimeout(() => {
+      const shock = document.createElement("div");
+      shock.classList.add("legendary-shock");
+      document.body.appendChild(shock);
+
+      setTimeout(() => shock.remove(), 450);
+    }, i * 60);
+  }
+}
+
 
