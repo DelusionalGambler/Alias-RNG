@@ -112,7 +112,7 @@ function spawnEpicLines(count) {
     line.style.top = `${y}px`;
     line.style.left = `${Math.random() * window.innerWidth}px`;
     line.style.width = `${width}px`;
-    line.style.transform = `rotate(${rotation}deg)`;
+    line.style.transform = `rotate(${rotation}deg) scaleX(0)`;
 
     document.body.appendChild(line);
 
