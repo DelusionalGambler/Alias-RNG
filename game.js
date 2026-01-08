@@ -31,6 +31,11 @@ function getRarity(index) {
 
 
 function roll() {
+
+  
+const rarity = "Legendary";
+
+  
   const weights = getAuraWeights();
 
   // appliquer la chance
