@@ -48,6 +48,10 @@ function roll() {
       if (rarity === "Rare") {
   triggerRareShock();
 }
+      if (rarity === "Epic") {
+  triggerEpicEffect();
+}
+
 
 
 const rarityEl = document.getElementById("rarityText");
@@ -89,5 +93,42 @@ function triggerRareShock() {
   setTimeout(() => {
     shock.remove();
   }, 1000); // durée = 1s, doit correspondre à l'animation CSS
+}
+
+function triggerEpicEffect() {
+  spawnEpicLines(18);
+  spawnEpicShocks();
+}
+
+function spawnEpicLines(count) {
+  for (let i = 0; i < count; i++) {
+    const line = document.createElement("div");
+    line.classList.add("epic-line");
+
+    const y = Math.random() * window.innerHeight;
+    const rotation = Math.random() * 360;
+    const width = 100 + Math.random() * 300;
+
+    line.style.top = `${y}px`;
+    line.style.left = `${Math.random() * window.innerWidth}px`;
+    line.style.width = `${width}px`;
+    line.style.transform = `rotate(${rotation}deg)`;
+
+    document.body.appendChild(line);
+
+    setTimeout(() => line.remove(), 600);
+  }
+}
+
+function spawnEpicShocks() {
+  for (let i = 0; i < 3; i++) {
+    setTimeout(() => {
+      const shock = document.createElement("div");
+      shock.classList.add("epic-shock");
+      document.body.appendChild(shock);
+
+      setTimeout(() => shock.remove(), 600);
+    }, i * 180);
+  }
 }
 
