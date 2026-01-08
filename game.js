@@ -33,8 +33,8 @@ function getRarity(index) {
 function roll() {
 
   
-// const rarity = getRarity(i);
-const rarity = "Legendary";
+const rarity = getRarity(i);
+
 
 
   
