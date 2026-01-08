@@ -33,7 +33,11 @@ function getRarity(index) {
 function roll() {
 
   
+const rarity = getRarity(i);
+  // const rarity = getRarity(i);
 const rarity = "Legendary";
+
+
 
   
   const weights = getAuraWeights();
